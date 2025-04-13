@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Placeholder product data - replace with real info and images later
+const products = [
+  {
+    name: "Custom Name Keychain",
+    description: "Get your name or a friend's name on a cool keychain! Many colors available.",
+    image: "/images/placeholder-keychain.svg", // Use this path when you add the image
+    price: "$5",
+  },
+  {
+    name: "Fidget Spinner Toy",
+    description: "Super fun fidget spinner, printed in your favorite colors.",
+    image: "/images/placeholder-toy.svg",
+    price: "$7",
+  },
+  {
+    name: "Mini Robot Buddy",
+    description: "A small robot figure to keep you company on your desk.",
+    image: "/images/placeholder-robot.svg",
+    price: "$10",
+  },
+    {
+    name: "Phone Stand",
+    description: "A handy stand to hold your phone while watching videos.",
+    image: "/images/placeholder-stand.svg",
+    price: "$8",
+  },
+  {
+    name: "Planter Pot",
+    description: "A small, cute pot for succulents or small plants. Geometric design.",
+    image: "/images/placeholder-pot.svg",
+    price: "$12",
+  },
+  {
+    name: "Custom Project Part",
+    description: "Need something specific? Ask about custom parts for your projects!",
+    image: "/images/placeholder-custom.svg",
+    price: "Contact for Quote",
+  },
+];
+---
+
+<Layout title="Shop / Gallery - Al's Creations">
+  <section>
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-4">Al's Creations 🎨</h1>
+    <p class="text-xl text-center text-gray-600 mb-10">Check out some of the cool things I've made! Contact me for custom orders.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {products.map(product => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+          {/* Simplified Placeholder - Replace with <img> tag later */}
+          <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-500 font-semibold text-center p-2">
+             {product.name} Placeholder
+             {/* Use <img src={product.image} alt={product.name} class="w-full h-48 object-cover"/> when you have images */}
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-2">{product.name}</h2>
+            <p class="text-gray-600 mb-4 flex-grow">{product.description}</p>
+            <div class="mt-auto pt-4 border-t border-gray-200">
+              <span class="text-xl font-bold text-indigo-600">{product.price}</span>
+              <a href="/contact" class="float-right bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-2 px-4 rounded-full text-sm transition duration-300">
+                Order Now
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/custom" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-md transition duration-300">
+        Request a Custom Print!
+      </a>
+    </div>
+
+  </section>
+</Layout> 
